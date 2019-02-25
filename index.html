@@ -1,97 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Card</title>
+  <title>Crystal Collector</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <body> 
  
 <div class="container">
 
-    <div class="card-deck">
-        <div class="card bg-primary">
-          <div class="card-body text-center">
-            <p class="card-text">Some text inside the first card</p>
-            <p class="card-text">Some more text to increase the height</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-deck mt-3">
-          <div class="card bg-primary">
-            <div class="card-body text-center">
-              <p class="card-text">Some text inside the first card</p>
-              <p class="card-text">Some more text to increase the height</p>
-              <p class="card-text">Some more text to increase the height</p>
-              <p class="card-text">Some more text to increase the height</p>
-            </div>
-          </div>
-        </div>
-  
+<!--Crytal Collector Card-->
+<div class="card-deck">
+  <div class="card bg-primary">
+    <div class="card-body text-center">
+    <p class="card-text"><h1>Crystal Collector</h1></p>
+     </div>
+  </div>
+</div>
+<!-- Unstructions Card -->
+<div class="card-deck mt-3">
+  <div class="card">
+    <div class="card-header text-center bg-primary"><h4>Instructions</h4></div>
+    <div class="card-body text-left">
+       <p class="card-text" ># You will be given a random number at the start of the game.</p>
+       <p class="card-text"># There are four crystals below.By clicking on a crystal you will add a specific amount of point to your total score.</p>
+       <p class="card-text"># You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+      <p class="card-text"># The value of each crystal is hidden from you until you click on it.</p>  
+      <p class="card-text"># Each time when the game starts, the game will chance the value of each crystal.</p>              
+    </div>
+   </div>
+</div>
+<!--Target Score Card--> 
   <div class="card-deck mt-3">
-    <div class="card bg-primary">
+    <div class="card">
+      <div class="card-header text-center bg-primary"><h4>Target Score</h4></div>
       <div class="card-body text-center">
-        <p class="card-text">Some text inside the first card</p>
-        <p class="card-text">Some more text to increase the height</p>
-        <p class="card-text">Some more text to increase the height</p>
-        <p class="card-text">Some more text to increase the height</p>
+        <p class="card-text" id="targetScore">76</p> 
       </div>
     </div>
-    <div class="card bg-warning">
+<!--Player Score Card-->
+    <div class="card ">
+      <div class="card-header text-center bg-primary"><h4>Player Score</h4></div>
       <div class="card-body text-center">
-        <p class="card-text">Some text inside the second card</p>
+        <p class="card-text" id="playerScore">36</p>
       </div>
     </div>
   </div>
 
+<!--Crystal Options-->
 
-  <div class="card-group mt-3">
+<div class="text-center mt-4 bg-primary"><h3>Crystal Options</h3></div>
+  <div class="card-group">
     <div class="card">
       <div class="card-body text-center">
-        <p class="card-text">Some text inside the first card</p>
+        <p class="card-text"><img src="assets/images/blue.png" alt="" id="blue"></p>
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
-        <p class="card-text">Some text inside the second card</p>
+        <p class="card-text"><img src="assets/images/green.png" alt="" id="green"></p>
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
-        <p class="card-text">Some text inside the third card</p>
+        <p class="card-text"><img src="assets/images/red.png" alt="" id="red"></p>
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
-        <p class="card-text">Some text inside the fourth card</p>
+        <p class="card-text"><img src="assets/images/yellow.png" alt="" id="yellow"></p>
       </div>
     </div> 
   </div>
 
-
+<!--Wins Card-->
   <div class="card-deck mt-3">
-    <div class="card bg-primary">
-      <div class="card-body text-center">
-        <p class="card-text">Some text inside the first card</p>
-        <p class="card-text">Some more text to increase the height</p>
-        <p class="card-text">Some more text to increase the height</p>
-        <p class="card-text">Some more text to increase the height</p>
+    <div class="card bg-warning">
+      <div class="card-header text-center bg-primary"><h4>Win Count: </h4></div>
+      <div class="card-body ">
+        <p class="card-text text-center" id="winCount">0</p>
+     
       </div>
     </div>
+
+<!--Losses Card-->
     <div class="card bg-warning">
-      <div class="card-body text-center">
-        <p class="card-text">Some text inside the second card</p>
+      <div class="card-header text-center bg-primary"><h4>Loss Count: </h4></div>
+      <div class="card-body">
+        <p class="card-text text-center" id="lossCount">0</p>
       </div>
     </div>
   </div>
-
 </div>
-​
-</body>
+
+<!--mmain game logic-->
+<script  type="text/javascript"  src="assets/javascript/game.js"></script>
+
+</body> 
 </html>
 ​
