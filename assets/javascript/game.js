@@ -53,8 +53,8 @@ var startGame = function(){
         crystal.red.value = getRandom(1, 12);
         crystal.yellow.value = getRandom(1, 12);
         //Change the HTML to reflect all of  changes
-        $("#playerScore").html(playerScore);
-        $("#targetScore").html(targetScore);
+        $("#playerScore").text(playerScore);
+        $("#targetScore").text(targetScore);
 
         //Testing for the all random values
         console.log(".....................")
@@ -71,7 +71,7 @@ var addValues = function(crystal){
         playerScore = playerScore + crystal.value;
 
         //showing the Html to reflect changes in playerScore
-        $("#playerScore").html(playerScore);
+        $("#playerScore").text(playerScore);
 
         //call teh checkWin function
         checkWin();
@@ -85,21 +85,7 @@ var addValues = function(crystal){
 var checkWin = function(){
 
         //Check if player score is bigger than targetscore
-        if(playerScore > targetScore){
-                alert("You Lost!Try Again!");
-                console.log("You Lost");
-
-                //here is the loss counter increase
-                lossCount++;
-
-                //Change loss count in html
-                $("#lossCount").html(lossCount)
-
-                 //Restart the game
-                 startGame();
-
-        }
-        else if(playerScore === targetScore){
+        if(playerScore === targetScore){
                 alert("Congratulations! You Won!");
                 console.log("You Won");
                 
@@ -107,11 +93,24 @@ var checkWin = function(){
                 winCount++
 
                 //Change loss count in html
-                $("#winCount").html(winCount);
+                $("#winCount").text(winCount);
 
                 //Restart the game
                 startGame();
 
+        }
+        else if(playerScore > targetScore){
+                alert("You Lost!Try Again!");
+                console.log("You Lost");
+
+                //here is the loss counter increase
+                lossCount++;
+
+                //Change loss count in html
+                $("#lossCount").text(lossCount)
+
+                 //Restart the game
+                 startGame();
         
         }
 
